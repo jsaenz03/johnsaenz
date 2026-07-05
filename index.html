@@ -9,11 +9,15 @@
   <meta property="og:description" content="ClinicIQ Solutions: automation for general practice, designed and tested inside real clinics by a nurse who works in them." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#36494e" />
+  <meta property="og:image" content="photos/hero.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="photos/cliniciq-logo.webp" type="image/webp" />
+  <link rel="apple-touch-icon" href="photos/cliniciq-logo.webp" />
 
-  <!-- ponytail: one font link, two families. Sora (display, avoids Inter-as-default tell) + Inter (body). -->
+  <!-- ponytail: one font link, two families. Sora (display) + Geist (body, avoids Inter-as-default tell). -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet" />
   <!-- Icons: Phosphor web (skill-compliant icon library, no hand-rolled SVG). Degrades to text labels if blocked. -->
   <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
 
@@ -54,7 +58,7 @@
 
     body {
       margin: 0;
-      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-family: "Geist", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
       background: var(--bg);
       color: var(--ink);
       line-height: 1.65;
@@ -125,25 +129,17 @@
     .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
     .role { font-family: "Sora", sans-serif; font-weight: 500; font-size: 0.98rem; color: var(--muted); }
     .role b { color: var(--accent-deep); font-weight: 600; }
-    /* ---- Hero: asymmetric split with architectural skewed frame. ---- */
-    .hero-frame-wrapper { position: relative; padding: 20px; }
+    /* ---- Hero: asymmetric split, clean rectangular frame (no skew — reads as a clinical brand). ---- */
+    .hero-frame-wrapper { position: relative; }
     .hero-frame {
-      position: relative; background: var(--ink); border-radius: 0;
-      transform: skewY(-8deg); overflow: hidden;
+      position: relative; background: var(--ink); border-radius: var(--r); overflow: hidden;
+      border: 1px solid var(--line); box-shadow: var(--shadow);
     }
-    @media (prefers-reduced-motion: reduce) {
-      .hero-frame { transform: none; }
-    }
-    .hero-media {
-      position: relative; aspect-ratio: 4/5; overflow: visible;
-      transform: skewY(8deg) scale(1.1); /* Counter-skew + slightly larger to fill edges */
-    }
+    .hero-media { position: relative; aspect-ratio: 4/5; overflow: hidden; }
     .hero-media img { width: 100%; height: 100%; object-fit: cover; }
     @media (max-width: 880px) {
       .hero-grid { grid-template-columns: 1fr; }
       .hero-media { aspect-ratio: 16/11; order: -1; }
-      .hero-frame { transform: skewY(-4deg); }
-      .hero-media { transform: skewY(4deg) scale(1.15); }
     }
 
     /* ---- Thesis: full-width editorial statement (different family). ---- */
@@ -217,6 +213,31 @@
 
     :focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 3px; border-radius: 4px; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "John Saenz",
+    "jobTitle": "Registered Nurse & Software Founder",
+    "description": "Registered Nurse and software builder creating automation for Australian general practice through ClinicIQ Solutions.",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "ClinicIQ Solutions",
+      "url": "https://cliniciq.com.au"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Wollongong",
+      "addressRegion": "NSW",
+      "addressCountry": "AU"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Golden Key International Honour Society"
+    },
+    "sameAs": ["https://www.linkedin.com/in/john-saenz-39113751"]
+  }
+  </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -239,7 +260,7 @@
       <div class="wrap hero-grid">
         <div>
           <p class="role reveal">Registered Nurse <b>·</b> Software Builder</p>
-          <h1 class="reveal">Nurse-built systems that give Australian GPs their time back.</h1>
+          <h1 class="reveal">Nurse-built systems that take admin off Australian GPs.</h1>
           <p class="lead reveal">Automation for general practice, designed and tested inside real clinics by a nurse who works in them.</p>
           <div class="hero-cta reveal">
             <a class="btn btn-primary" href="https://cliniciq.com.au" target="_blank" rel="noopener">Get in touch <i class="ph ph-arrow-up-right"></i></a>
@@ -259,10 +280,10 @@
     <!-- THESIS -->
     <section class="thesis">
       <div class="wrap">
-        <h2 class="reveal">Most healthcare software is built by people who have never worked in healthcare.</h2>
+        <h2>Most healthcare software is built by people who have never worked in healthcare.</h2>
         <div class="body">
-          <p class="lead reveal">I spent five years as a nurse in GP clinics, buried in paperwork that took time away from patients. With a background in information systems, I started automating the workflows I knew were broken. Other practices wanted the same tools, and ClinicIQ Solutions was the result.</p>
-          <p class="pull reveal">Designed by a clinician, for clinicians.</p>
+          <p class="lead">I spent five years as a nurse in GP clinics, buried in paperwork that took time away from patients. With a background in information systems, I started automating the workflows I knew were broken. Other practices wanted the same tools, and ClinicIQ Solutions was the result.</p>
+          <p class="pull">Five years in GP clinics. A degree in information systems. One question: where is the admin leaking time?</p>
         </div>
       </div>
     </section>
@@ -275,7 +296,7 @@
           <h2 class="reveal" style="margin-top:14px">Four tools, one principle: take the admin off the clinician.</h2>
         </div>
         <div class="bento">
-          <article class="card c-nurse reveal">
+          <article class="card c-nurse">
             <div class="ic"><i class="ph ph-stethoscope" aria-hidden="true"></i></div>
             <p class="tag">NursePod</p>
             <h3>Clinical workflow tools</h3>
@@ -283,7 +304,7 @@
             <div class="thumb"><img src="photos/calculators.webp" alt="Clinical workflow tools" loading="lazy" width="800" height="450" /></div>
           </article>
 
-          <article class="card c-inven reveal">
+          <article class="card c-inven">
             <div class="ic"><i class="ph ph-package" aria-hidden="true"></i></div>
             <p class="tag">cIQventory</p>
             <h3>Smart inventory</h3>
@@ -291,19 +312,19 @@
             <div class="thumb"><img src="photos/automations.webp" alt="Inventory automation dashboard" loading="lazy" width="800" height="450" /></div>
           </article>
 
-          <article class="card c-pip reveal">
+          <article class="card c-pip">
             <div class="ic"><i class="ph ph-calculator" aria-hidden="true"></i></div>
             <p class="tag">PIPQI</p>
             <h3>PIP calculation &amp; tracking</h3>
-            <p>Practice Incentives Program work, kept current with RACGP requirements.</p>
+            <p>Practice Incentives Program work, aligned to current PIP/QI incentive requirements.</p>
             <div class="thumb"><img src="photos/PIPQI-analytics.webp" alt="PIP analytics dashboard" loading="lazy" width="800" height="450" /></div>
           </article>
 
-          <article class="card c-med reveal">
+          <article class="card c-med">
             <div class="ic"><i class="ph ph-brain" aria-hidden="true"></i></div>
             <p class="tag">MedPlan AI</p>
             <h3>AI-assisted care planning</h3>
-            <p>Care planning support that drafts, and respects the clinical judgement that signs off.</p>
+            <p>Care planning support that drafts, and respects the clinical judgement that signs off — decision support for the clinician, not a diagnostic or therapeutic device.</p>
           </article>
         </div>
       </div>
@@ -317,15 +338,15 @@
           <p class="lead" style="margin-top:16px">Three habits that make the work stick once a practice adopts it.</p>
         </div>
         <div class="principles">
-          <div class="principle reveal">
+          <div class="principle">
             <h3>Found from the inside</h3>
             <p>The problems I solve are ones I have lived with as a nurse, not ones I read about in a brief.</p>
           </div>
-          <div class="principle reveal">
+          <div class="principle">
             <h3>Validated in practice</h3>
-            <p>Every tool is tested against real clinical workflows and RACGP requirements before it ships.</p>
+            <p>Every tool is tested against real clinical workflows and current PIP/QI and practice standards before it ships.</p>
           </div>
-          <div class="principle reveal">
+          <div class="principle">
             <h3>Built on shared experience</h3>
             <p>Clinicians trust tools from someone who understands their day, their compliance load, and their constraints.</p>
           </div>
@@ -336,12 +357,12 @@
     <!-- CREDENTIALS -->
     <section id="credentials">
       <div class="wrap">
-        <h2 class="reveal">Credentials</h2>
+        <h2>Credentials</h2>
         <div class="stats">
-          <div class="stat reveal"><div class="big">5+ years</div><div class="lbl">Nursing in Australian GP clinics</div></div>
-          <div class="stat reveal"><div class="big">BIS &amp; Accounting</div><div class="lbl">Bachelor of Information Systems Management</div></div>
-          <div class="stat reveal"><div class="big">Golden Key</div><div class="lbl">International academic honour society</div></div>
-          <div class="stat reveal"><div class="big">2025</div><div class="lbl">ClinicIQ founded, four products launched</div></div>
+          <div class="stat"><div class="big">5+ years</div><div class="lbl">Nursing in Australian GP clinics</div></div>
+          <div class="stat"><div class="big">BIS</div><div class="lbl">Bachelor of Information Systems Management</div></div>
+          <div class="stat"><div class="big">Golden Key</div><div class="lbl">International academic honour society</div></div>
+          <div class="stat"><div class="big">2025</div><div class="lbl">ClinicIQ founded, four products launched</div></div>
         </div>
       </div>
     </section>
