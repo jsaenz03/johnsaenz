@@ -158,8 +158,11 @@
     .lead { color: var(--ink-soft); max-width: 56ch; font-size: 1.08rem; }
 
     /* ============ HERO ============ */
-    .hero { padding-top: clamp(56px, 8vw, 96px); padding-bottom: clamp(72px, 9vw, 112px); overflow: hidden; }
-    .hero-grid { display: grid; grid-template-columns: 1.08fr 0.78fr; gap: clamp(36px, 5vw, 72px); align-items: center; }
+    .hero {
+      position: relative; overflow: hidden;
+      padding-top: clamp(56px, 8vw, 96px); padding-bottom: clamp(72px, 9vw, 112px);
+    }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.05fr); align-items: center; min-height: clamp(420px, 62vh, 640px); }
     .role {
       font-family: "Sora", sans-serif; font-weight: 500; font-size: 0.92rem; color: var(--muted);
       display: inline-flex; align-items: center; gap: 12px;
@@ -178,39 +181,39 @@
     .hero-meta .m .k { font-family: "Sora", sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--ink); }
     .hero-meta .m .v { color: var(--muted); font-size: 0.82rem; letter-spacing: 0.02em; margin-top: 2px; }
 
-    /* Hero frame: layered depth — the portrait card floats over a tinted gradient tile. */
-    .hero-frame-wrapper { position: relative; }
-    .hero-frame-wrapper::before {
-      content: ""; position: absolute; inset: 22px -22px -22px 22px;
-      background: linear-gradient(135deg, rgba(95,212,195,0.16), rgba(47,174,157,0.02) 60%, transparent);
-      border: 1px solid var(--line); border-radius: var(--r-lg); z-index: 0;
-    }
-    .hero-frame {
-      position: relative; z-index: 1; background: var(--surface); border-radius: var(--r-lg);
-      overflow: hidden; border: 1px solid var(--line-strong); box-shadow: var(--shadow-lg);
-    }
-    .hero-media { position: relative; aspect-ratio: 4/5; overflow: hidden; }
-    .hero-media img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); transition: transform 1.4s var(--ease-out); }
-    .hero-frame:hover .hero-media img { transform: scale(1.08); }
-    .hero-media::after {
+    /* Full-bleed portrait: covers the hero's full height on the right, fades left into the page bg. */
+    .hero-bg { position: absolute; top: 0; right: 0; bottom: 0; width: clamp(46%, 52vw, 60%); z-index: 0; overflow: hidden; pointer-events: none; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+    /* Left scrim fades the image into --bg so the text column keeps full contrast. */
+    .hero-bg::after {
       content: ""; position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(10,16,17,0.78) 100%);
+      background: linear-gradient(90deg,
+        var(--bg) 0%,
+        color-mix(in srgb, var(--bg) 94%, transparent) 18%,
+        color-mix(in srgb, var(--bg) 55%, transparent) 42%,
+        color-mix(in srgb, var(--bg) 12%, transparent) 78%,
+        transparent 100%);
+    }
+    /* Soft top + bottom vignette so the photo reads as part of the page, not pasted on. */
+    .hero-bg::before {
+      content: ""; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 40%, transparent) 0%, transparent 16%, transparent 84%, color-mix(in srgb, var(--bg) 55%, transparent) 100%);
     }
     .hero-tag {
-      position: absolute; left: 18px; bottom: 18px; z-index: 2;
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: "Sora", sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
-      padding: 8px 13px; border-radius: 999px;
-      background: color-mix(in srgb, var(--bg) 55%, transparent);
+      position: absolute; right: 22px; bottom: 22px; z-index: 2;
+      display: inline-flex; align-items: center;
+      font-family: "Sora", sans-serif; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.04em;
+      padding: 8px 14px; border-radius: 999px;
+      background: color-mix(in srgb, var(--bg) 62%, transparent);
       backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
       border: 1px solid var(--line-strong); color: var(--ink-soft);
     }
-    .hero-tag .live { width: 7px; height: 7px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 10px var(--accent-glow); animation: pulse 2.4s var(--ease-soft) infinite; }
-    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.8); } }
     @media (max-width: 880px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-frame-wrapper { order: -1; max-width: 440px; }
-      .hero-media { aspect-ratio: 16/12; }
+      /* Mobile: image becomes a shorter banner above the text, fade flips to bottom-up. */
+      .hero-bg { width: 100%; height: 38vh; bottom: auto; }
+      .hero-bg::after { background: linear-gradient(180deg, transparent 35%, var(--bg) 92%); }
+      .hero-bg::before { display: none; }
+      .hero-grid { grid-template-columns: 1fr; padding-top: 30vh; }
     }
 
     /* ============ MARQUEE ============ */
@@ -359,7 +362,7 @@
 
     /* Respect users who want less movement: kill the loops */
     @media (prefers-reduced-motion: reduce) {
-      .hero-media img, .thumb img, .marquee-track, .hero-tag .live { animation: none !important; transition: none !important; }
+      .thumb img, .marquee-track { animation: none !important; transition: none !important; }
     }
   </style>
   <script type="application/ld+json">
@@ -407,6 +410,10 @@
   <main id="main">
     <!-- HERO -->
     <section class="hero">
+      <div class="hero-bg reveal" style="--d:180ms" aria-hidden="true">
+        <img src="photos/hero.webp" alt="" loading="eager" width="1067" height="1600" />
+        <span class="hero-tag">Wollongong, NSW</span>
+      </div>
       <div class="wrap hero-grid">
         <div>
           <p class="role reveal"><span class="pill-dot" aria-hidden="true"></span> Registered Nurse <b>·</b> Software Builder</p>
@@ -420,14 +427,6 @@
             <div class="m"><div class="k">2025</div><div class="v">ClinicIQ founded</div></div>
             <div class="m"><div class="k">4</div><div class="v">Products shipped</div></div>
             <div class="m"><div class="k">5+ yrs</div><div class="v">In GP clinics</div></div>
-          </div>
-        </div>
-        <div class="hero-frame-wrapper reveal" style="--d:180ms">
-          <div class="hero-frame">
-            <div class="hero-media">
-              <img src="photos/hero.webp" alt="John Saenz — Registered Nurse & Healthcare Technology Entrepreneur" loading="eager" width="1067" height="1600" />
-              <span class="hero-tag"><span class="live" aria-hidden="true"></span> Wollongong, NSW</span>
-            </div>
           </div>
         </div>
       </div>
