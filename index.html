@@ -225,6 +225,15 @@
     @keyframes scroll-x { to { transform: translateX(-50%); } }
     @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
 
+    /* ============ MARQUEE / SPONSORS ============ */
+    .marquee.sponsors { background: var(--surface-2); border-block: 1px solid var(--line-strong); }
+    .marquee.sponsors .marquee-track { gap: 64px; padding-block: 23px; }
+    .marquee.sponsors .sponsor-item { display: inline-flex; align-items: center; justify-content: center; width: 140px; height: 54px; font: inherit; letter-spacing: 0; }
+    .marquee.sponsors .sponsor-item::after { content: none; }
+    /* Logos are black-on-alpha; invert luminance so ink reads as light on the dark panel, then soften to a muted partner-strip look. */
+    .marquee.sponsors .sponsor-item img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; opacity: 0.8; filter: grayscale(100%) invert(1) brightness(1.4); transition: opacity 0.3s ease, filter 0.3s ease, transform 0.3s ease; }
+    .marquee.sponsors .sponsor-item:hover img { opacity: 1; filter: grayscale(100%) invert(1) brightness(1.6); transform: scale(1.08); }
+
     /* ============ THESIS ============ */
     .thesis .body { margin-top: 32px; display: grid; grid-template-columns: 1.35fr 1fr; gap: 56px; align-items: start; }
     .thesis .lead { max-width: 54ch; }
@@ -401,8 +410,8 @@
       <div class="wrap hero-grid">
         <div>
           <p class="role reveal"><span class="pill-dot" aria-hidden="true"></span> Registered Nurse <b>·</b> Software Builder</p>
-          <h1 class="reveal" style="--d:60ms">Nurse-built systems that take <span class="accent">admin off</span> <em class="serif">Australian</em> GPs.</h1>
-          <p class="lead reveal" style="--d:140ms">Automation for general practice — designed and tested inside real clinics by a nurse who works in them.</p>
+          <h1 class="reveal" style="--d:60ms">Hi! My name is <span class="accent">John</span>.</h1>
+          <p class="lead reveal" style="--d:140ms">Nurse-built systems that take <em class="serif">admin off</em> Australian GPs.</p>
           <div class="hero-cta reveal" style="--d:220ms">
             <a class="btn btn-primary" href="https://cliniciq.com.au" target="_blank" rel="noopener">Get in touch <i class="ph ph-arrow-up-right"></i></a>
             <a class="btn btn-ghost" href="#work">See the work</a>
@@ -424,11 +433,22 @@
       </div>
     </section>
 
-    <!-- MARQUEE -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>NursePod</span><span>cIQventory</span><span>PIPQI</span><span>MedPlan&nbsp;AI</span><span>Practice Incentives Program</span><span>Quality Improvement</span><span>General Practice</span>
-        <span>NursePod</span><span>cIQventory</span><span>PIPQI</span><span>MedPlan&nbsp;AI</span><span>Practice Incentives Program</span><span>Quality Improvement</span><span>General Practice</span>
+    <!-- MARQUEE / SPONSORS -->
+    <div class="marquee sponsors" aria-label="Our partners">
+      <div class="marquee-track" id="sponsors-track">
+        <span class="sponsor-item"><img src="photos/sponsors/king-lord-yeshua.png" alt="King Lord Yeshua - Faith community partner" loading="lazy" width="120" height="40"></span>
+        <span class="sponsor-item"><img src="photos/sponsors/thegospelplug.png" alt="The Gospel Plug - Digital media partner" loading="lazy" width="120" height="40"></span>
+        <span class="sponsor-item"><img src="photos/sponsors/grampijoe.png" alt="GrampiJoe - Creative services partner" loading="lazy" width="120" height="40"></span>
+        <span class="sponsor-item"><img src="photos/sponsors/craftfmee.png" alt="CraftfMee - Handmade goods partner" loading="lazy" width="120" height="40"></span>
+        <span class="sponsor-item"><img src="photos/sponsors/dr-erin.png" alt="Dr Erin - Medical professional partner" loading="lazy" width="120" height="40"></span>
+        <span class="sponsor-item"><img src="photos/sponsors/jesus-one-way.png" alt="Jesus One Way - Faith community partner" loading="lazy" width="120" height="40"></span>
+        <!-- Duplicate for seamless infinite scroll -->
+        <span class="sponsor-item" aria-hidden="true"><img src="photos/sponsors/king-lord-yeshua.png" alt="" loading="lazy" width="120" height="40"></span>
+        <span class="sponsor-item" aria-hidden="true"><img src="photos/sponsors/thegospelplug.png" alt="" loading="lazy" width="120" height="40"></span>
+        <span class="sponsor-item" aria-hidden="true"><img src="photos/sponsors/grampijoe.png" alt="" loading="lazy" width="120" height="40"></span>
+        <span class="sponsor-item" aria-hidden="true"><img src="photos/sponsors/craftfmee.png" alt="" loading="lazy" width="120" height="40"></span>
+        <span class="sponsor-item" aria-hidden="true"><img src="photos/sponsors/dr-erin.png" alt="" loading="lazy" width="120" height="40"></span>
+        <span class="sponsor-item" aria-hidden="true"><img src="photos/sponsors/jesus-one-way.png" alt="" loading="lazy" width="120" height="40"></span>
       </div>
     </div>
 
