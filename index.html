@@ -194,10 +194,13 @@
         color-mix(in srgb, var(--bg) 12%, transparent) 78%,
         transparent 100%);
     }
-    /* Soft top + bottom vignette so the photo reads as part of the page, not pasted on. */
+    /* Bottom-right corner fade so the photo dissolves into the page edge. */
     .hero-bg::before {
-      content: ""; position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 40%, transparent) 0%, transparent 16%, transparent 84%, color-mix(in srgb, var(--bg) 55%, transparent) 100%);
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(315deg,
+        var(--bg) 0%,
+        color-mix(in srgb, var(--bg) 90%, transparent) 14%,
+        transparent 40%);
     }
     .hero-tag {
       position: absolute; right: 22px; bottom: 22px; z-index: 2;
@@ -209,10 +212,18 @@
       border: 1px solid var(--line-strong); color: var(--ink-soft);
     }
     @media (max-width: 880px) {
-      /* Mobile: image becomes a shorter banner above the text, fade flips to bottom-up. */
+      /* Mobile: shorter banner above the text; left fade layered over a bottom blend so text stays clear. */
       .hero-bg { width: 100%; height: 38vh; bottom: auto; }
-      .hero-bg::after { background: linear-gradient(180deg, transparent 35%, var(--bg) 92%); }
-      .hero-bg::before { display: none; }
+      .hero-bg::after {
+        background:
+          linear-gradient(90deg,
+            var(--bg) 0%,
+            color-mix(in srgb, var(--bg) 94%, transparent) 18%,
+            color-mix(in srgb, var(--bg) 55%, transparent) 42%,
+            color-mix(in srgb, var(--bg) 12%, transparent) 78%,
+            transparent 100%),
+          linear-gradient(180deg, transparent 35%, var(--bg) 92%);
+      }
       .hero-grid { grid-template-columns: 1fr; padding-top: 30vh; }
     }
 
