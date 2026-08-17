@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>John Saenz — Nurse-Built Software for Australian General Practice</title>
-  <meta name="description" content="Registered Nurse in Wollongong, NSW building general practice automation through ClinicIQ Solutions: PIP/QI tracking, inventory, and care planning tools." />
+  <title>John Saenz — A Nurse Helping Nurses Thrive in the AI Era</title>
+  <meta name="description" content="Registered Nurse in Wollongong, NSW helping fellow nurses thrive in the AI era — using tech and AI to their advantage and optimising efficiency in the workplace." />
   <meta name="author" content="John Saenz" />
   <!-- ponytail: canonical/OG/sitemap URLs assume GitHub Pages for this repo; swap for the custom domain when one goes live -->
   <link rel="canonical" href="https://jsaenz03.github.io/johnsaenz/" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="John Saenz" />
-  <meta property="og:title" content="John Saenz — Nurse-built software for Australian general practice" />
-  <meta property="og:description" content="ClinicIQ Solutions: automation for general practice, designed and tested inside real clinics by a nurse who works in them." />
+  <meta property="og:title" content="John Saenz — A nurse helping nurses thrive in the AI era" />
+  <meta property="og:description" content="A fellow nurse helping other nurses thrive in the AI era — using tech, especially AI, to their advantage and optimising efficiency in the workplace." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jsaenz03.github.io/johnsaenz/" />
   <meta property="og:image" content="https://jsaenz03.github.io/johnsaenz/photos/john-saenz.webp" />
@@ -22,8 +22,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="John Saenz — Nurse-built software for Australian general practice" />
-  <meta name="twitter:description" content="ClinicIQ Solutions: automation for general practice, designed and tested inside real clinics by a nurse who works in them." />
+  <meta name="twitter:title" content="John Saenz — A nurse helping nurses thrive in the AI era" />
+  <meta name="twitter:description" content="A fellow nurse helping other nurses thrive in the AI era — using tech, especially AI, to their advantage and optimising efficiency in the workplace." />
   <meta name="twitter:image" content="https://jsaenz03.github.io/johnsaenz/photos/john-saenz.webp" />
 
   <!-- Local -->
@@ -39,8 +39,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <!-- Icons: Phosphor web -->
-  <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+  <!-- Icons: Phosphor web (self-hosted regular weight) -->
+  <link rel="preload" href="public/icons/Phosphor.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="public/icons/phosphor.css" />
 
   <style>
     /* ============ TOKENS ============
@@ -175,7 +176,7 @@
     /* Typed hero statement: chars hidden until typed, caret blinks like a vitals readout. */
     .hero h1 .ch { opacity: 0; }
     .hero h1 .ch.on { opacity: 1; }
-    .caret {
+    .type-caret {
       display: inline-block; width: 3px; height: 0.82em; margin-left: 8px;
       background: var(--accent); transform: translateY(0.08em);
       animation: caret-blink 1.1s steps(1) infinite;
@@ -191,8 +192,8 @@
     .hero-figure img { width: auto; max-width: none; height: clamp(700px, 104vh, 950px); }
     @media (max-width: 880px) {
       .hero-grid { grid-template-columns: 1fr; min-height: 0; gap: 36px; }
-      .hero-figure { order: 0; height: auto; justify-content: flex-start; margin-left: 24px; }
-      .hero-figure img { max-width: 100%; height: auto; max-height: 46vh; }
+      .hero-figure { order: 0; height: auto; margin-left: 0; }
+      .hero-figure img { width: 100%; height: clamp(420px, 62vh, 560px); object-fit: cover; object-position: top center; }
     }
 
     /* ============ MARQUEE ============ */
@@ -355,8 +356,8 @@
         "name": "John Saenz",
         "url": "https://jsaenz03.github.io/johnsaenz/",
         "image": "https://jsaenz03.github.io/johnsaenz/photos/john-saenz.webp",
-        "jobTitle": "Registered Nurse & Software Founder",
-        "description": "Registered Nurse and software builder creating automation for Australian general practice through ClinicIQ Solutions.",
+        "jobTitle": "Registered Nurse",
+        "description": "Registered Nurse helping fellow nurses thrive in the AI era — using tech, especially AI, to their advantage and optimising efficiency in the GP workplace.",
         "worksFor": { "@id": "https://jsaenz03.github.io/johnsaenz/#cliniciq" },
         "address": {
           "@type": "PostalAddress",
@@ -369,11 +370,11 @@
           "name": "Golden Key International Honour Society"
         },
         "knowsAbout": [
-          "General practice automation",
           "Practice nursing",
-          "PIP/QI incentives",
+          "AI in general practice",
           "Clinical workflow design",
-          "Health software"
+          "PIP/QI incentives",
+          "Health technology"
         ],
         "sameAs": ["https://www.linkedin.com/in/john-saenz-39113751"]
       },
@@ -383,7 +384,7 @@
         "name": "ClinicIQ Solutions",
         "url": "https://cliniciq.com.au",
         "logo": "https://jsaenz03.github.io/johnsaenz/photos/cliniciq-logo.webp",
-        "description": "Australian software company building automation for general practice, founded by a Registered Nurse.",
+        "description": "Australian company helping nurses thrive in the AI era with AI overlays and tools for efficient general practice. Founded by a Registered Nurse.",
         "foundingDate": "2025",
         "founder": { "@id": "https://jsaenz03.github.io/johnsaenz/#john-saenz" },
         "address": {
@@ -411,10 +412,10 @@
         "@type": "WebPage",
         "@id": "https://jsaenz03.github.io/johnsaenz/#webpage",
         "url": "https://jsaenz03.github.io/johnsaenz/",
-        "name": "John Saenz — Nurse-Built Software for Australian General Practice",
-        "description": "Registered Nurse in Wollongong, NSW building general practice automation through ClinicIQ Solutions.",
+        "name": "John Saenz — A Nurse Helping Nurses Thrive in the AI Era",
+        "description": "Registered Nurse in Wollongong, NSW helping fellow nurses thrive in the AI era — using tech and AI to their advantage and optimising efficiency in the workplace.",
         "inLanguage": "en-AU",
-        "dateModified": "2026-08-15",
+        "dateModified": "2026-08-17",
         "isPartOf": { "@id": "https://jsaenz03.github.io/johnsaenz/#website" },
         "about": [
           { "@id": "https://jsaenz03.github.io/johnsaenz/#john-saenz" },
@@ -483,7 +484,7 @@
             "name": "Who is John Saenz?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "John Saenz is a Registered Nurse and software founder based in Wollongong, NSW, Australia. After five years working in Australian general practice clinics, he founded ClinicIQ Solutions in 2025 to build automation tools for GP practices."
+              "text": "John Saenz is a Registered Nurse based in Wollongong, NSW, Australia. After five years working in Australian general practice clinics — and a degree in information systems — he now helps fellow nurses thrive in the AI era: using tech, especially AI, to their advantage and optimising efficiency in the workplace. He founded ClinicIQ Solutions in 2025 to carry that work."
             }
           },
           {
@@ -491,7 +492,7 @@
             "name": "What is ClinicIQ Solutions?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "ClinicIQ Solutions is an Australian software company that builds automation for general practice. Its tools cover clinical workflows, inventory, PIP/QI incentive tracking, and AI-assisted care planning — designed and tested inside working clinics by a practising nurse (ABN 55 882 511 758)."
+              "text": "ClinicIQ Solutions is the vehicle for that mission: an Australian platform of AI overlays and tools for GP clinics — care planning, task management, inventory, and PIP/QI incentive tracking — designed and tested inside working clinics by a practising nurse (ABN 55 882 511 758). Every tool has a free tier, so a nurse can start without practice sign-off."
             }
           },
           {
@@ -499,7 +500,7 @@
             "name": "What products does ClinicIQ Solutions offer?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "ClinicIQ Solutions offers four products: NursePod (clinical workflow tools for practice nurses), cIQventory (smart stock and inventory management), PIPQI (Practice Incentives Program calculation and tracking), and MedPlan AI (AI-assisted care planning with clinician sign-off)."
+              "text": "ClinicIQ Solutions offers four products: NursePod (task and workflow tools built for a nursing shift), cIQventory (smart stock and inventory management), PIPQI (Practice Incentives Program calculation and tracking), and MedPlan AI (AI-assisted care planning with clinician sign-off). Each one helps a practice nurse adapt to new technology and reclaim time in the GP clinic."
             }
           },
           {
@@ -554,9 +555,9 @@
       <canvas class="hero-trail" id="hero-trail" aria-hidden="true"></canvas>
       <div class="wrap hero-grid">
         <div>
-          <p class="role reveal"><span class="pill-dot" aria-hidden="true"></span> Registered Nurse <b>·</b> Software Builder</p>
-          <h1 class="reveal" style="--d:60ms">Hi! My <em class="serif">name is</em> <span class="accent">John</span>.<span class="sr-only"> John Saenz — Registered Nurse, software founder of ClinicIQ Solutions, Wollongong NSW.</span></h1>
-          <p class="lead reveal" style="--d:140ms">Nurse-built systems that take <em class="serif">admin off</em> Australian GPs.</p>
+          <p class="role reveal"><span class="pill-dot" aria-hidden="true"></span> Registered Nurse <b>·</b> Helping nurses thrive in the AI era</p>
+          <h1 class="reveal" style="--d:60ms">Hi! My <em class="serif">name is</em> <span class="accent">John</span>.<span class="sr-only"> John Saenz — Registered Nurse who helps fellow nurses thrive in the AI era, Wollongong NSW.</span></h1>
+          <p class="lead reveal" style="--d:140ms">A fellow nurse helping other nurses <em class="serif">thrive in the AI era</em> — using tech to your advantage, especially AI, to optimise efficiency at work.</p>
           <div class="hero-cta reveal" style="--d:220ms">
             <a class="btn btn-primary" href="https://cliniciq.com.au" target="_blank" rel="noopener noreferrer">Get in touch <i class="ph ph-arrow-up-right"></i></a>
             <a class="btn btn-ghost" href="#work">See the work</a>
@@ -590,10 +591,10 @@
     <!-- THESIS -->
     <section class="thesis">
       <div class="wrap">
-        <h2 class="reveal">Most healthcare software is built by people who have <em class="serif">never worked</em> in healthcare.</h2>
+        <h2 class="reveal">AI is changing the clinic faster than anyone is <em class="serif">teaching nurses</em> to use it.</h2>
         <div class="body">
-          <p class="lead reveal" style="--d:100ms">I spent five years as a nurse in GP clinics, buried in paperwork that took time away from patients. The burden is measured — an <a href="https://www1.racgp.org.au/ajgp/2021/september/mabel-data-examining-workload" target="_blank" rel="noopener noreferrer">RACGP analysis of MABEL survey data</a> covering 2,907 Australian GPs found they spend 5.1 hours a week, about 14% of their time, on non-billable admin. With a background in information systems, I started automating the workflows I knew were broken. Other practices wanted the same tools, and ClinicIQ Solutions was the result.</p>
-          <p class="pull reveal" style="--d:180ms"><b>The thesis</b>Five years in GP clinics. A degree in information systems. One question: where is the admin leaking time?</p>
+          <p class="lead reveal" style="--d:100ms">I spent five years as a nurse in GP clinics watching technology arrive faster than anyone was trained for it — while paperwork ate the shift. The burden is measured: an <a href="https://www1.racgp.org.au/ajgp/2021/september/mabel-data-examining-workload" target="_blank" rel="noopener noreferrer">RACGP analysis of MABEL survey data</a> covering 2,907 Australian GPs found 5.1 hours a week, about 14% of their time, goes to non-billable admin. With a background in information systems, I learned to make the technology work for me — then started helping other nurses do the same. ClinicIQ Solutions grew out of that.</p>
+          <p class="pull reveal" style="--d:180ms"><b>The mission</b>Five years in GP clinics. A degree in information systems. One goal: help every nurse make technology work for them.</p>
         </div>
       </div>
     </section>
@@ -602,7 +603,7 @@
     <section id="work">
       <div class="wrap">
         <div class="section-head">
-          <h2 class="reveal">Four tools, one principle: <em class="serif">take the admin off</em> the clinician.</h2>
+          <h2 class="reveal">Four tools, one principle: <em class="serif">make the tech</em> work for the nurse.</h2>
         </div>
         <div class="bento">
           <article class="card c-nurse reveal">
@@ -644,7 +645,7 @@
       <div class="wrap approach-grid">
         <div class="left reveal">
           <h2>How I <em class="serif">work</em></h2>
-          <p class="lead" style="margin-top:18px">Three habits that make the work stick once a practice adopts it.</p>
+          <p class="lead" style="margin-top:18px">Three habits that make the change stick once a nurse takes it on.</p>
         </div>
         <div class="principles">
           <div class="principle reveal">
@@ -690,20 +691,20 @@
       <div class="wrap faq-grid">
         <div class="faq-head reveal">
           <h2>Frequently asked <em class="serif">questions</em>.</h2>
-          <p class="lead" style="margin-top:18px">Straight answers about who I am, what ClinicIQ Solutions builds, and who it's for.</p>
+          <p class="lead" style="margin-top:18px">Straight answers about who I am, how I help nurses, and what ClinicIQ Solutions offers.</p>
         </div>
         <div class="faq-list">
           <details class="faq-item reveal" open>
             <summary><h3>Who is John Saenz?</h3><i class="ph ph-caret-down caret" aria-hidden="true"></i></summary>
-            <p class="faq-answer">John Saenz is a Registered Nurse and software founder based in Wollongong, NSW, Australia. After five years working in Australian general practice clinics, he founded ClinicIQ Solutions in 2025 to build automation tools for GP practices.</p>
+            <p class="faq-answer">John Saenz is a Registered Nurse based in Wollongong, NSW, Australia. After five years working in Australian general practice clinics — and a degree in information systems — he now helps fellow nurses thrive in the AI era: using tech, especially AI, to their advantage and optimising efficiency in the workplace. He founded ClinicIQ Solutions in 2025 to carry that work.</p>
           </details>
           <details class="faq-item reveal" style="--d:60ms">
             <summary><h3>What is ClinicIQ Solutions?</h3><i class="ph ph-caret-down caret" aria-hidden="true"></i></summary>
-            <p class="faq-answer">ClinicIQ Solutions is an Australian software company that builds automation for general practice. Its tools cover clinical workflows, inventory, PIP/QI incentive tracking, and AI-assisted care planning — designed and tested inside working clinics by a practising nurse (ABN 55 882 511 758).</p>
+            <p class="faq-answer">ClinicIQ Solutions is the vehicle for that mission: an Australian platform of AI overlays and tools for GP clinics — care planning, task management, inventory, and PIP/QI incentive tracking — designed and tested inside working clinics by a practising nurse (ABN 55 882 511 758). Every tool has a free tier, so a nurse can start without practice sign-off.</p>
           </details>
           <details class="faq-item reveal" style="--d:120ms">
             <summary><h3>What products does ClinicIQ Solutions offer?</h3><i class="ph ph-caret-down caret" aria-hidden="true"></i></summary>
-            <p class="faq-answer">ClinicIQ Solutions offers four products: NursePod (clinical workflow tools for practice nurses), cIQventory (smart stock and inventory management), PIPQI (Practice Incentives Program calculation and tracking), and MedPlan AI (AI-assisted care planning with clinician sign-off).</p>
+            <p class="faq-answer">ClinicIQ Solutions offers four products: NursePod (task and workflow tools built for a nursing shift), cIQventory (smart stock and inventory management), PIPQI (Practice Incentives Program calculation and tracking), and MedPlan AI (AI-assisted care planning with clinician sign-off). Each one helps a practice nurse adapt to new technology and reclaim time in the GP clinic.</p>
           </details>
           <details class="faq-item reveal" style="--d:180ms">
             <summary><h3>What is PIPQI?</h3><i class="ph ph-caret-down caret" aria-hidden="true"></i></summary>
@@ -727,8 +728,8 @@
         <div class="contact-card reveal">
           <div class="contact-inner">
             <div>
-              <h2>Let's talk about <em class="serif">your</em> practice.</h2>
-              <p class="lead" style="margin-top:18px">Practice managers, GPs, practice nurses, and partners are all welcome. No hard sell — just a conversation about where the admin is leaking time.</p>
+              <h2>Let's talk about <em class="serif">your</em> shift.</h2>
+              <p class="lead" style="margin-top:18px">Practice nurses first — plus the managers and GPs who back them. No hard sell, no jargon — just a nurse-to-nurse conversation about where tech and AI can win your time back.</p>
               <div class="hero-cta" style="margin-top:30px">
                 <a class="btn btn-primary" href="https://cliniciq.com.au" target="_blank" rel="noopener noreferrer">Get in touch <i class="ph ph-arrow-up-right"></i></a>
                 <a class="btn btn-ghost" href="https://www.linkedin.com/in/john-saenz-39113751" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -776,7 +777,7 @@
       if (h1 && !reduce) {
         var chars = [];
         var caret = document.createElement('span');
-        caret.className = 'caret'; caret.setAttribute('aria-hidden', 'true');
+        caret.className = 'type-caret'; caret.setAttribute('aria-hidden', 'true');
         (function wrap(parent) {
           Array.prototype.slice.call(parent.childNodes).forEach(function (node) {
             if (node.nodeType === 3) {
