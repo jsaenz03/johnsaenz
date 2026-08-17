@@ -563,7 +563,7 @@
           </div>
         </div>
         <figure class="hero-figure reveal" style="--d:180ms">
-          <img src="photos/hero-bodyshot2.webp" alt="Portrait of John Saenz, Registered Nurse and founder of ClinicIQ Solutions" loading="eager" fetchpriority="high" decoding="async" width="815" height="1300" />
+          <img src="photos/hero-bodyshot2.webp" alt="Portrait of John Saenz, Registered Nurse and founder of ClinicIQ Solutions" loading="eager" fetchpriority="high" decoding="async" width="868" height="1300" />
         </figure>
       </div>
     </section>
@@ -821,9 +821,14 @@
           ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         }
         fit();
-        window.addEventListener('resize', fit);
-        hero.addEventListener('pointermove', function (e) {
+        // hero can resize without a window resize (font swap, reflow, scrollbar,
+        // zoom) — a stale canvas paints the blob offset from the real cursor
+        if (window.ResizeObserver) new ResizeObserver(fit).observe(hero);
+        else window.addEventListener('resize', fit);
+        // listen globally: overlays/coalesced events can swallow hero-level moves
+        window.addEventListener('pointermove', function (e) {
           var r = hero.getBoundingClientRect();
+          if (e.clientY < r.top || e.clientY > r.bottom || e.clientX < r.left || e.clientX > r.right) return;
           mx = e.clientX - r.left; my = e.clientY - r.top;
           if (!have) { have = true; bx = mx; by = my; }
           lastMove = performance.now();
