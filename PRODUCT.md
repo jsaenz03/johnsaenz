@@ -24,8 +24,8 @@ Single-page static site (one `index.html`), served as-is; no build step. English
 
 ## Capabilities and Constraints
 
-- Sections: hero, sponsor/partner logo marquee, thesis, five products (Nursepod, cIQventory, Docsert AI, PIPQI, Camog), approach, credentials, contact.
-- Product cards link to each app's own landing page (nursepod3.jsaenz.au, stock.jsaenz.au, docsert.jsaenz.au, pipqi.jsaenz.au, camog.jsaenz.au — never the legacy nursepod.jsaenz.au / docuwhisper.jsaenz.au hosts); the cliniciq.com.au product pages remain the canonical marketing home for schema and llms.txt references. Brand spellings follow the canonical forms Nursepod / cIQventory / Docsert AI / PIPQI / Camog.
+- Sections: hero, sponsor/partner logo marquee, thesis, five products (NursEpod, cIQventory, Docsert AI, PIPQI, Camog), approach, credentials, contact.
+- Product cards link to each app's own landing page (nursepod3.jsaenz.au, stock.jsaenz.au, docsert.jsaenz.au, pipqi.jsaenz.au, camog.jsaenz.au — never the legacy nursepod.jsaenz.au / docuwhisper.jsaenz.au hosts); the cliniciq.com.au product pages remain the canonical marketing home for schema and llms.txt references. Brand spellings follow the canonical forms NursEpod / cIQventory / Docsert AI / PIPQI / Camog.
 - Docsert AI (formerly branded MedPlan AI) must always carry the "decision support, not a diagnostic or therapeutic device" qualifier wherever the product is described in full (product card, schema description); short list mentions may use "with clinician sign-off".
 - No forms, no backend, no analytics — external links only.
 
