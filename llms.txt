@@ -1,6 +1,6 @@
 # John Saenz
 
-> Registered Nurse in Wollongong, NSW helping fellow nurses thrive in the AI era — using tech and AI to their advantage and optimising efficiency in the workplace.
+> Registered Nurse in Wollongong, NSW helping nurses and GP clinics thrive in the AI era — automation designed and tested inside real general practice.
 
 John Saenz is a Registered Nurse with 5+ years of clinical experience in Australian general practice clinics and a degree in Information Systems Management. He helps other nurses adapt to technological advancement and AI: building practical skills with the systems GP clinics already run, and using AI (care planning, task management, notes) to work more efficiently. He is the founder of ClinicIQ Solutions (ABN 55 882 511 758), an Australian company whose AI overlays and tools for practice nurses have a free tier and need no practice sign-off to start.
 
@@ -12,11 +12,12 @@ John Saenz is a Registered Nurse with 5+ years of clinical experience in Austral
 ## What this site covers
 
 - [Home](https://jsaenz03.github.io/johnsaenz/): Positioning, mission and credentials of John Saenz — a fellow nurse helping nurses make technology work for them.
-- Products (NursePod, cIQventory, PIPQI, MedPlan AI): task management for a nursing shift, smart inventory, Practice Incentives Program (PIP/QI) calculation and tracking, and AI-assisted care planning with clinician sign-off.
+- Products (Nursepod, cIQventory, Docsert AI, PIPQI, Camog): task management for the clinic team, smart inventory (non-PHI), clinical document structuring with clinician sign-off, Practice Incentives Program (PIP/QI) calculation and tracking, and clinical photo documentation for Windows. Product pages live on cliniciq.com.au.
 - FAQ: who John Saenz is, what ClinicIQ Solutions is and offers, what PIPQI is, how much time Australian GPs spend on administration (RACGP analysis of MABEL survey data, 2,907 GPs: 5.1 hours a week, about 14% of their time, on non-billable admin), and how to make contact.
 
 ## Related
 
 - [ClinicIQ Solutions](https://cliniciq.com.au/): AI overlays, clinical tools and calculators for Australian practice nurses in GP clinics.
+- [ClinicIQ product pages](https://cliniciq.com.au/): one page per product — [Nursepod](https://cliniciq.com.au/nursepod.html), [cIQventory](https://cliniciq.com.au/ciqventory.html), [Docsert AI](https://cliniciq.com.au/docsert.html), [PIPQI](https://cliniciq.com.au/pipqi.html), [Camog](https://cliniciq.com.au/camog.html).
 - [ClinicIQ FAQ](https://cliniciq.com.au/faq.html): free tiers, no practice sign-off, RACGP Standards alignment, pricing.
 - [Sitemap](https://jsaenz03.github.io/johnsaenz/sitemap.xml)

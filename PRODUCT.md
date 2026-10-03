@@ -24,19 +24,21 @@ Single-page static site (one `index.html`), served as-is; no build step. English
 
 ## Capabilities and Constraints
 
-- Sections: hero, sponsor/partner logo marquee, thesis, four products (NursePod, cIQventory, PIPQI, MedPlan AI), approach, credentials, contact.
-- MedPlan AI must always carry the "decision support, not a diagnostic or therapeutic device" qualifier.
+- Sections: hero, sponsor/partner logo marquee, thesis, five products (Nursepod, cIQventory, Docsert AI, PIPQI, Camog), approach, credentials, contact.
+- Product cards link to each app's own landing page (nursepod3.jsaenz.au, stock.jsaenz.au, docsert.jsaenz.au, pipqi.jsaenz.au, camog.jsaenz.au — never the legacy nursepod.jsaenz.au / docuwhisper.jsaenz.au hosts); the cliniciq.com.au product pages remain the canonical marketing home for schema and llms.txt references. Brand spellings follow the canonical forms Nursepod / cIQventory / Docsert AI / PIPQI / Camog.
+- Docsert AI (formerly branded MedPlan AI) must always carry the "decision support, not a diagnostic or therapeutic device" qualifier wherever the product is described in full (product card, schema description); short list mentions may use "with clinician sign-off".
 - No forms, no backend, no analytics — external links only.
 
 ## Brand Commitments
 
 - Name and business: John Saenz / ClinicIQ Solutions, Wollongong NSW, ABN 55 882 511 758.
-- All facts on the site are confirmed correct by the owner (founding 2025, 4 products, 5+ yrs in GP clinics, BIS, Golden Key) and binding.
+- All facts on the site are confirmed correct by the owner (founding 2025, 5 products, 5+ yrs in GP clinics, BIS, Golden Key) and binding.
 - The dark clinical theme (near-black teal surfaces, single aqua accent) is locked; future work refines within it.
 
 ## Evidence on Hand
 
 - Portrait photos in `photos/` (hero cutout: `hero-side.png` → `hero-side.webp`).
+- Product screenshots in `photos/apps/` (1440×900 landing captures shared with the cliniciq.com.au product pages).
 - Partner logos in `public/sponsors/`.
 - No testimonials, case studies, or metrics beyond the stat row; do not fabricate any.
 

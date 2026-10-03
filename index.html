@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>John Saenz — A Nurse Helping Nurses Thrive in the AI Era</title>
-  <meta name="description" content="Registered Nurse in Wollongong, NSW helping fellow nurses thrive in the AI era — using tech and AI to their advantage and optimising efficiency in the workplace." />
+  <meta name="description" content="Registered Nurse in Wollongong, NSW helping nurses and GP clinics thrive in the AI era — automation designed and tested inside real general practice." />
   <meta name="author" content="John Saenz" />
   <!-- ponytail: canonical/OG/sitemap URLs assume GitHub Pages for this repo; swap for the custom domain when one goes live -->
   <link rel="canonical" href="https://jsaenz03.github.io/johnsaenz/" />
@@ -12,7 +12,7 @@
   <!-- Open Graph -->
   <meta property="og:site_name" content="John Saenz" />
   <meta property="og:title" content="John Saenz — A nurse helping nurses thrive in the AI era" />
-  <meta property="og:description" content="A fellow nurse helping other nurses thrive in the AI era — using tech, especially AI, to their advantage and optimising efficiency in the workplace." />
+  <meta property="og:description" content="Registered Nurse in Wollongong, NSW helping nurses and GP clinics thrive in the AI era — automation designed and tested inside real general practice." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jsaenz03.github.io/johnsaenz/" />
   <meta property="og:image" content="https://jsaenz03.github.io/johnsaenz/photos/john-saenz.webp" />
@@ -23,7 +23,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="John Saenz — A nurse helping nurses thrive in the AI era" />
-  <meta name="twitter:description" content="A fellow nurse helping other nurses thrive in the AI era — using tech, especially AI, to their advantage and optimising efficiency in the workplace." />
+  <meta name="twitter:description" content="Registered Nurse in Wollongong, NSW helping nurses and GP clinics thrive in the AI era — automation designed and tested inside real general practice." />
   <meta name="twitter:image" content="https://jsaenz03.github.io/johnsaenz/photos/john-saenz.webp" />
 
   <!-- Local -->
@@ -277,17 +277,34 @@
     .c-nurse { grid-column: span 7; }
     .c-inven { grid-column: span 5; }
     .c-pip   { grid-column: span 5; }
-    .c-med {
+    .c-doc {
       grid-column: span 7;
       background: var(--surface-2);
       border-color: var(--line-strong);
     }
-    .c-med .ic { background: rgba(95,212,195,0.12); color: var(--accent); border-color: rgba(95,212,195,0.25); }
-    .c-med .tag { color: var(--accent); }
-    .thumb { margin-top: 6px; border-radius: var(--r); overflow: hidden; aspect-ratio: 16/9; border: 1px solid var(--line); position: relative; }
+    .c-doc .ic { background: rgba(95,212,195,0.12); color: var(--accent); border-color: rgba(95,212,195,0.25); }
+    .c-doc .tag { color: var(--accent); }
+    .c-cam { grid-column: span 12; }
+    a.card { text-decoration: none; color: inherit; cursor: pointer; }
+    .card .go {
+      position: absolute; top: 26px; right: 26px; color: var(--muted-2); font-size: 1.05rem;
+      transition: color .25s ease, transform .25s var(--ease-out);
+    }
+    .card:hover .go { color: var(--accent); transform: translate(2px, -2px); }
+    .store {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 8px;
+      font-family: "Sora", sans-serif; font-size: 0.78rem; font-weight: 500; color: var(--muted);
+    }
+    .store img { width: 20px; height: 20px; filter: grayscale(100%) brightness(1.45); transition: filter .35s var(--ease-out); }
+    .card:hover .store img { filter: grayscale(0%) brightness(1); }
+    .thumb { margin-top: auto; border-radius: var(--r); overflow: hidden; aspect-ratio: 16/9; border: 1px solid var(--line); position: relative; }
     .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease-out); }
     .card:hover .thumb img { transform: scale(1.05); }
-    @media (max-width: 820px) { .bento { grid-template-columns: 1fr; } .c-nurse, .c-inven, .c-pip, .c-med { grid-column: span 1; } }
+    @media (min-width: 821px) {
+      .c-cam { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 34px; align-items: center; }
+      .c-cam .thumb { margin-top: 0; }
+    }
+    @media (max-width: 820px) { .bento { grid-template-columns: 1fr; } .c-nurse, .c-inven, .c-pip, .c-doc, .c-cam { grid-column: span 1; } }
 
     /* ============ APPROACH ============ */
     .approach-grid { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(36px, 6vw, 80px); align-items: start; }
@@ -408,7 +425,7 @@
 
     /* Respect users who want less movement: kill the loops */
     @media (prefers-reduced-motion: reduce) {
-      .thumb img, .marquee-track { animation: none !important; transition: none !important; }
+      .thumb img, .marquee-track, .store img { animation: none !important; transition: none !important; }
     }
   </style>
   <script type="application/ld+json">
@@ -478,9 +495,9 @@
         "@id": "https://jsaenz03.github.io/johnsaenz/#webpage",
         "url": "https://jsaenz03.github.io/johnsaenz/",
         "name": "John Saenz — A Nurse Helping Nurses Thrive in the AI Era",
-        "description": "Registered Nurse in Wollongong, NSW helping fellow nurses thrive in the AI era — using tech and AI to their advantage and optimising efficiency in the workplace.",
+        "description": "Registered Nurse in Wollongong, NSW helping nurses and GP clinics thrive in the AI era — automation designed and tested inside real general practice.",
         "inLanguage": "en-AU",
-        "dateModified": "2026-08-17",
+        "dateModified": "2026-10-03",
         "isPartOf": { "@id": "https://jsaenz03.github.io/johnsaenz/#website" },
         "about": [
           { "@id": "https://jsaenz03.github.io/johnsaenz/#john-saenz" },
@@ -500,10 +517,11 @@
             "position": 1,
             "item": {
               "@type": "SoftwareApplication",
-              "name": "NursePod",
+              "name": "Nursepod",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web",
-              "description": "Clinical workflow templates and automations that fit how practice nurses work through a shift."
+              "url": "https://cliniciq.com.au/nursepod.html",
+              "description": "Task management for Australian GP clinics — shared calendars, recurring tasks, team messaging and a policy register, built around a nursing shift."
             }
           },
           {
@@ -514,7 +532,8 @@
               "name": "cIQventory",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web",
-              "description": "Smart inventory and stock management that knows what a general practice really carries and reorders."
+              "url": "https://cliniciq.com.au/ciqventory.html",
+              "description": "Smart inventory and stock management for general practice — expiry alerts, QR stock takes and reorder lists. Non-PHI by design."
             }
           },
           {
@@ -522,10 +541,11 @@
             "position": 3,
             "item": {
               "@type": "SoftwareApplication",
-              "name": "PIPQI",
+              "name": "Docsert AI",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web",
-              "description": "Practice Incentives Program calculation and tracking aligned to current PIP/QI incentive requirements."
+              "url": "https://cliniciq.com.au/docsert.html",
+              "description": "Turns clinician-supplied notes into structured GP management plan and care plan drafts the clinician reviews and approves — decision support, not a diagnostic or therapeutic device."
             }
           },
           {
@@ -533,10 +553,23 @@
             "position": 4,
             "item": {
               "@type": "SoftwareApplication",
-              "name": "MedPlan AI",
+              "name": "PIPQI",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web",
-              "description": "AI-assisted care planning that drafts and respects the clinical judgement that signs off — decision support, not a diagnostic or therapeutic device."
+              "url": "https://cliniciq.com.au/pipqi.html",
+              "description": "Practice Incentives Program calculation and tracking aligned to current PIP/QI incentive requirements."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Camog",
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "Windows",
+              "url": "https://cliniciq.com.au/camog.html",
+              "description": "Clinical photo documentation for Windows — capture with recorded consent, review timelines and compare, encrypted and offline."
             }
           }
         ]
@@ -557,7 +590,7 @@
             "name": "What is ClinicIQ Solutions?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "ClinicIQ Solutions is the vehicle for that mission: an Australian platform of AI overlays and tools for GP clinics — care planning, task management, inventory, and PIP/QI incentive tracking — designed and tested inside working clinics by a practising nurse (ABN 55 882 511 758). Every tool has a free tier, so a nurse can start without practice sign-off."
+              "text": "ClinicIQ Solutions is the vehicle for that mission: an Australian platform of AI overlays and tools for GP clinics — clinical documentation, task management, inventory, photo documentation, and PIP/QI incentive tracking — designed and tested inside working clinics by a practising nurse (ABN 55 882 511 758). Every tool has a free tier, so a nurse can start without practice sign-off."
             }
           },
           {
@@ -565,7 +598,7 @@
             "name": "What products does ClinicIQ Solutions offer?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "ClinicIQ Solutions offers four products: NursePod (task and workflow tools built for a nursing shift), cIQventory (smart stock and inventory management), PIPQI (Practice Incentives Program calculation and tracking), and MedPlan AI (AI-assisted care planning with clinician sign-off). Each one helps a practice nurse adapt to new technology and reclaim time in the GP clinic."
+              "text": "ClinicIQ Solutions offers five products: Nursepod (task management built around a nursing shift), cIQventory (smart stock and inventory management, non-PHI by design), Docsert AI (structured GP management plan and care plan drafts with clinician sign-off), PIPQI (Practice Incentives Program calculation and tracking), and Camog (clinical photo documentation for Windows). Each one helps a practice nurse adapt to new technology and reclaim time in the GP clinic."
             }
           },
           {
@@ -668,39 +701,56 @@
     <section id="work">
       <div class="wrap">
         <div class="section-head">
-          <h2 class="reveal">Four tools, one principle: <em class="serif">make the tech</em> work for the nurse.</h2>
+          <h2 class="reveal">Five tools, one principle: <em class="serif">make the tech</em> work for the nurse.</h2>
         </div>
         <div class="bento">
-          <article class="card c-nurse reveal">
-            <div class="ic"><i class="ph ph-stethoscope" aria-hidden="true"></i></div>
-            <p class="tag">NursePod</p>
-            <h3>Clinical workflow tools</h3>
-            <p>Templates and automations that fit how nurses actually work through a shift.</p>
-            <div class="thumb"><img src="photos/calculators.webp" alt="NursePod — clinical workflow tools for practice nurses" loading="lazy" width="800" height="450" /></div>
-          </article>
+          <a class="card c-nurse reveal" href="https://nursepod3.jsaenz.au/" target="_blank" rel="noopener noreferrer">
+            <div class="ic"><i class="ph ph-clipboard-text" aria-hidden="true"></i></div>
+            <p class="tag">Nursepod</p>
+            <h3>Task management for the clinic team</h3>
+            <p>Shared calendars, recurring tasks, team messaging and a policy register, built around a nursing shift.</p>
+            <div class="thumb"><img src="photos/apps/nursepod-landing.webp" alt="Nursepod app landing page — task management for Australian GP clinics" loading="lazy" width="1440" height="900" /></div>
+            <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
+          </a>
 
-          <article class="card c-inven reveal" style="--d:80px">
+          <a class="card c-inven reveal" style="--d:80px" href="https://stock.jsaenz.au/" target="_blank" rel="noopener noreferrer">
             <div class="ic"><i class="ph ph-package" aria-hidden="true"></i></div>
             <p class="tag">cIQventory</p>
             <h3>Smart inventory</h3>
-            <p>Stock management that knows what a practice really carries and reorders.</p>
-            <div class="thumb"><img src="photos/automations.webp" alt="cIQventory — inventory automation dashboard for general practice" loading="lazy" width="800" height="450" /></div>
-          </article>
+            <p>Vaccines and medical stock tracked with expiry alerts, QR stock takes and reorder lists. Non-PHI by design.</p>
+            <div class="thumb"><img src="photos/apps/ciqventory-landing.webp" alt="cIQventory app landing page — inventory management for Australian GP clinics" loading="lazy" width="1440" height="900" /></div>
+            <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
+          </a>
 
-          <article class="card c-pip reveal" style="--d:120px">
-            <div class="ic"><i class="ph ph-calculator" aria-hidden="true"></i></div>
+          <a class="card c-pip reveal" style="--d:120px" href="https://pipqi.jsaenz.au/" target="_blank" rel="noopener noreferrer">
+            <div class="ic"><i class="ph ph-chart-line-up" aria-hidden="true"></i></div>
             <p class="tag">PIPQI</p>
-            <h3>PIP calculation &amp; tracking</h3>
-            <p>Practice Incentives Program work, aligned to current PIP/QI incentive requirements.</p>
-            <div class="thumb"><img src="photos/PIPQI-analytics.webp" alt="PIPQI — Practice Incentives Program analytics dashboard" loading="lazy" width="800" height="450" /></div>
-          </article>
+            <h3>PIP QI tracking</h3>
+            <p>Your PIP QI measures on one dashboard — benchmarks, progress tracking and focused lists to work through.</p>
+            <div class="thumb"><img src="photos/apps/pipqi-landing.webp" alt="PIPQI app landing page — PIP QI tracking for Australian general practice" loading="lazy" width="1440" height="900" /></div>
+            <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
+          </a>
 
-          <article class="card c-med reveal" style="--d:160px">
-            <div class="ic"><i class="ph ph-brain" aria-hidden="true"></i></div>
-            <p class="tag">MedPlan AI</p>
-            <h3>AI-assisted care planning</h3>
-            <p>Care planning support that drafts, and respects the clinical judgement that signs off — decision support for the clinician, not a diagnostic or therapeutic device.</p>
-          </article>
+          <a class="card c-doc reveal" style="--d:160px" href="https://docsert.jsaenz.au/" target="_blank" rel="noopener noreferrer">
+            <div class="ic"><i class="ph ph-file-text" aria-hidden="true"></i></div>
+            <p class="tag">Docsert AI</p>
+            <h3>Clinical documentation, structured</h3>
+            <p>Turns clinician-supplied notes into management plan and care plan drafts you review and approve — decision support, not a diagnostic or therapeutic device.</p>
+            <div class="thumb"><img src="photos/apps/docsert-landing.webp" alt="Docsert AI app landing page — document structuring for Australian GP clinics" loading="lazy" width="1440" height="900" /></div>
+            <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
+          </a>
+
+          <a class="card c-cam reveal" style="--d:200px" href="https://camog.jsaenz.au/" target="_blank" rel="noopener noreferrer">
+            <div>
+              <div class="ic"><i class="ph ph-camera" aria-hidden="true"></i></div>
+              <p class="tag">Camog</p>
+              <h3>Clinical photo documentation</h3>
+              <p>Wound and clinical photos with recorded consent, review timelines and compare — encrypted, offline, and built for Windows.</p>
+              <p class="store"><img src="photos/apps/microsoft-store-icon.svg" alt="" loading="lazy" width="20" height="20" />Microsoft Store</p>
+            </div>
+            <div class="thumb"><img src="photos/apps/camog-landing.webp" alt="Camog app landing page — clinical photo documentation for Windows" loading="lazy" width="1440" height="900" /></div>
+            <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
     </section>
@@ -746,7 +796,7 @@
           <div class="stat reveal"><div class="big">5<span class="unit">+ yrs</span></div><div class="lbl">Nursing in Australian GP clinics</div></div>
           <div class="stat reveal" style="--d:80px"><div class="big">BIS</div><div class="lbl">Bachelor of Information Systems Management</div></div>
           <div class="stat reveal" style="--d:160px"><div class="big">Golden Key</div><div class="lbl">International academic honour society</div></div>
-          <div class="stat reveal" style="--d:240px"><div class="big">4</div><div class="lbl">Products launched since founding in 2025</div></div>
+          <div class="stat reveal" style="--d:240px"><div class="big">5</div><div class="lbl">Products launched since founding in 2025</div></div>
         </div>
       </div>
     </section>
@@ -765,11 +815,11 @@
           </details>
           <details class="faq-item reveal" style="--d:60ms">
             <summary><h3>What is ClinicIQ Solutions?</h3><i class="ph ph-caret-down caret" aria-hidden="true"></i></summary>
-            <p class="faq-answer">ClinicIQ Solutions is the vehicle for that mission: an Australian platform of AI overlays and tools for GP clinics — care planning, task management, inventory, and PIP/QI incentive tracking — designed and tested inside working clinics by a practising nurse (ABN 55 882 511 758). Every tool has a free tier, so a nurse can start without practice sign-off.</p>
+            <p class="faq-answer">ClinicIQ Solutions is the vehicle for that mission: an Australian platform of AI overlays and tools for GP clinics — clinical documentation, task management, inventory, photo documentation, and PIP/QI incentive tracking — designed and tested inside working clinics by a practising nurse (ABN 55 882 511 758). Every tool has a free tier, so a nurse can start without practice sign-off.</p>
           </details>
           <details class="faq-item reveal" style="--d:120ms">
             <summary><h3>What products does ClinicIQ Solutions offer?</h3><i class="ph ph-caret-down caret" aria-hidden="true"></i></summary>
-            <p class="faq-answer">ClinicIQ Solutions offers four products: NursePod (task and workflow tools built for a nursing shift), cIQventory (smart stock and inventory management), PIPQI (Practice Incentives Program calculation and tracking), and MedPlan AI (AI-assisted care planning with clinician sign-off). Each one helps a practice nurse adapt to new technology and reclaim time in the GP clinic.</p>
+            <p class="faq-answer">ClinicIQ Solutions offers five products: Nursepod (task management built around a nursing shift), cIQventory (smart stock and inventory management, non-PHI by design), Docsert AI (structured GP management plan and care plan drafts with clinician sign-off), PIPQI (Practice Incentives Program calculation and tracking), and Camog (clinical photo documentation for Windows). Each one helps a practice nurse adapt to new technology and reclaim time in the GP clinic.</p>
           </details>
           <details class="faq-item reveal" style="--d:180ms">
             <summary><h3>What is PIPQI?</h3><i class="ph ph-caret-down caret" aria-hidden="true"></i></summary>
