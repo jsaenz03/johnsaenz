@@ -32,7 +32,7 @@ Single-page static site (one `index.html`), served as-is; no build step. English
 ## Brand Commitments
 
 - Name and business: John Saenz / ClinicIQ Solutions, Wollongong NSW, ABN 55 882 511 758.
-- All facts on the site are confirmed correct by the owner (founding 2025, 5 products, 5+ yrs in GP clinics, BIS, Golden Key) and binding.
+- All facts on the site are confirmed correct by the owner (founding June 2026, 5 products, 5+ yrs in GP clinics, BIS, Golden Key) and binding.
 - The dark clinical theme (near-black teal surfaces, single aqua accent) is locked; future work refines within it.
 
 ## Evidence on Hand

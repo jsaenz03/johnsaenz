@@ -297,8 +297,20 @@
     .store img { width: 20px; height: 20px; filter: grayscale(100%) brightness(1.45); transition: filter .35s var(--ease-out); }
     .card:hover .store img { filter: grayscale(0%) brightness(1); }
     .thumb { margin-top: auto; border-radius: var(--r); overflow: hidden; aspect-ratio: 16/9; border: 1px solid var(--line); position: relative; }
-    .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease-out); }
-    .card:hover .thumb img { transform: scale(1.05); }
+    .thumb > img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease-out); }
+    .card:hover .thumb > img { transform: scale(1.05); }
+    .thumb .app-logo {
+      position: absolute; right: 14px; bottom: 14px;
+      display: grid; place-items: center;
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: rgba(247,250,250,0.92);
+      border: 1px solid rgba(10,16,17,0.08);
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 24px rgba(4,8,9,0.4);
+    }
+    .thumb .app-logo img { width: 30px; height: 30px; object-fit: contain; }
     @media (min-width: 821px) {
       .c-cam { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 34px; align-items: center; }
       .c-cam .thumb { margin-top: 0; }
@@ -466,7 +478,7 @@
         "url": "https://cliniciq.com.au",
         "logo": "https://jsaenz.au/photos/cliniciq-logo.webp",
         "description": "Australian company helping nurses thrive in the AI era with AI overlays and tools for efficient general practice. Founded by a Registered Nurse.",
-        "foundingDate": "2025",
+        "foundingDate": "2026-06",
         "founder": { "@id": "https://jsaenz.au/#john-saenz" },
         "address": {
           "@type": "PostalAddress",
@@ -581,7 +593,7 @@
             "name": "Who is John Saenz?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "John Saenz is a Registered Nurse based in Wollongong, NSW, Australia. After five years working in Australian general practice clinics — and a degree in information systems — he now helps fellow nurses thrive in the AI era: using tech, especially AI, to their advantage and optimising efficiency in the workplace. He founded ClinicIQ Solutions in 2025 to carry that work."
+              "text": "John Saenz is a Registered Nurse based in Wollongong, NSW, Australia. After five years working in Australian general practice clinics — and a degree in information systems — he now helps fellow nurses thrive in the AI era: using tech, especially AI, to their advantage and optimising efficiency in the workplace. He founded ClinicIQ Solutions in June 2026 to carry that work."
             }
           },
           {
@@ -703,43 +715,7 @@
           <h2 class="reveal">Five tools, one principle: <em class="serif">make the tech</em> work for the nurse.</h2>
         </div>
         <div class="bento">
-          <a class="card c-nurse reveal" href="https://nursepod3.jsaenz.au/" target="_blank" rel="noopener noreferrer">
-            <div class="ic"><i class="ph ph-clipboard-text" aria-hidden="true"></i></div>
-            <p class="tag">NursEpod</p>
-            <h3>Task management for the clinic team</h3>
-            <p>Shared calendars, recurring tasks, team messaging and a policy register, built around a nursing shift.</p>
-            <div class="thumb"><img src="photos/apps/nursepod-landing.webp" alt="NursEpod app landing page — task management for Australian GP clinics" loading="lazy" width="1440" height="900" /></div>
-            <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
-          </a>
-
-          <a class="card c-inven reveal" style="--d:80px" href="https://stock.jsaenz.au/" target="_blank" rel="noopener noreferrer">
-            <div class="ic"><i class="ph ph-package" aria-hidden="true"></i></div>
-            <p class="tag">cIQventory</p>
-            <h3>Smart inventory</h3>
-            <p>Vaccines and medical stock tracked with expiry alerts, QR stock takes and reorder lists. Non-PHI by design.</p>
-            <div class="thumb"><img src="photos/apps/ciqventory-landing.webp" alt="cIQventory app landing page — inventory management for Australian GP clinics" loading="lazy" width="1440" height="900" /></div>
-            <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
-          </a>
-
-          <a class="card c-pip reveal" style="--d:120px" href="https://pipqi.jsaenz.au/" target="_blank" rel="noopener noreferrer">
-            <div class="ic"><i class="ph ph-chart-line-up" aria-hidden="true"></i></div>
-            <p class="tag">PIPQI</p>
-            <h3>PIP QI tracking</h3>
-            <p>Your PIP QI measures on one dashboard — benchmarks, progress tracking and focused lists to work through.</p>
-            <div class="thumb"><img src="photos/apps/pipqi-landing.webp" alt="PIPQI app landing page — PIP QI tracking for Australian general practice" loading="lazy" width="1440" height="900" /></div>
-            <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
-          </a>
-
-          <a class="card c-doc reveal" style="--d:160px" href="https://docsert.jsaenz.au/" target="_blank" rel="noopener noreferrer">
-            <div class="ic"><i class="ph ph-file-text" aria-hidden="true"></i></div>
-            <p class="tag">Docsert AI</p>
-            <h3>Clinical documentation, structured</h3>
-            <p>Turns clinician-supplied notes into management plan and care plan drafts you review and approve — decision support, not a diagnostic or therapeutic device.</p>
-            <div class="thumb"><img src="photos/apps/docsert-landing.webp" alt="Docsert AI app landing page — document structuring for Australian GP clinics" loading="lazy" width="1440" height="900" /></div>
-            <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
-          </a>
-
-          <a class="card c-cam reveal" style="--d:200px" href="https://camog.jsaenz.au/" target="_blank" rel="noopener noreferrer">
+          <a class="card c-cam reveal" href="https://camog.jsaenz.au/" target="_blank" rel="noopener noreferrer">
             <div>
               <div class="ic"><i class="ph ph-camera" aria-hidden="true"></i></div>
               <p class="tag">Camog</p>
@@ -747,7 +723,43 @@
               <p>Wound and clinical photos with recorded consent, review timelines and compare — encrypted, offline, and built for Windows.</p>
               <p class="store"><img src="photos/apps/microsoft-store-icon.svg" alt="" loading="lazy" width="20" height="20" />Microsoft Store</p>
             </div>
-            <div class="thumb"><img src="photos/apps/camog-landing.webp" alt="Camog app landing page — clinical photo documentation for Windows" loading="lazy" width="1440" height="900" /></div>
+            <div class="thumb"><img src="photos/apps/camog-landing.webp" alt="Camog app landing page — clinical photo documentation for Windows" loading="lazy" width="1440" height="900" /><span class="app-logo"><img src="photos/apps/camog-logo.png" alt="" loading="lazy" width="512" height="512" /></span></div>
+            <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
+          </a>
+
+          <a class="card c-nurse reveal" style="--d:80ms" href="https://nursepod3.jsaenz.au/" target="_blank" rel="noopener noreferrer">
+            <div class="ic"><i class="ph ph-clipboard-text" aria-hidden="true"></i></div>
+            <p class="tag">NursEpod</p>
+            <h3>Task management for the clinic team</h3>
+            <p>Shared calendars, recurring tasks, team messaging and a policy register, built around a nursing shift.</p>
+            <div class="thumb"><img src="photos/apps/nursepod-landing.webp" alt="NursEpod app landing page — task management for Australian GP clinics" loading="lazy" width="1440" height="900" /><span class="app-logo"><img src="photos/apps/nursepod-logo.png" alt="" loading="lazy" width="512" height="512" /></span></div>
+            <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
+          </a>
+
+          <a class="card c-inven reveal" style="--d:120ms" href="https://stock.jsaenz.au/" target="_blank" rel="noopener noreferrer">
+            <div class="ic"><i class="ph ph-package" aria-hidden="true"></i></div>
+            <p class="tag">cIQventory</p>
+            <h3>Smart inventory</h3>
+            <p>Vaccines and medical stock tracked with expiry alerts, QR stock takes and reorder lists. Non-PHI by design.</p>
+            <div class="thumb"><img src="photos/apps/ciqventory-landing.webp" alt="cIQventory app landing page — inventory management for Australian GP clinics" loading="lazy" width="1440" height="900" /><span class="app-logo"><img src="photos/apps/ciqventory-logo.svg" alt="" loading="lazy" /></span></div>
+            <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
+          </a>
+
+          <a class="card c-pip reveal" style="--d:160ms" href="https://pipqi.jsaenz.au/" target="_blank" rel="noopener noreferrer">
+            <div class="ic"><i class="ph ph-chart-line-up" aria-hidden="true"></i></div>
+            <p class="tag">PIPQI</p>
+            <h3>PIP QI tracking</h3>
+            <p>Your PIP QI measures on one dashboard — benchmarks, progress tracking and focused lists to work through.</p>
+            <div class="thumb"><img src="photos/apps/pipqi-landing.webp" alt="PIPQI app landing page — PIP QI tracking for Australian general practice" loading="lazy" width="1440" height="900" /><span class="app-logo"><img src="photos/apps/pipqi-logo.png" alt="" loading="lazy" width="512" height="512" /></span></div>
+            <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
+          </a>
+
+          <a class="card c-doc reveal" style="--d:200ms" href="https://docsert.jsaenz.au/" target="_blank" rel="noopener noreferrer">
+            <div class="ic"><i class="ph ph-file-text" aria-hidden="true"></i></div>
+            <p class="tag">Docsert AI</p>
+            <h3>Clinical documentation, structured</h3>
+            <p>Turns clinician-supplied notes into management plan and care plan drafts you review and approve — decision support, not a diagnostic or therapeutic device.</p>
+            <div class="thumb"><img src="photos/apps/docsert-landing.webp" alt="Docsert AI app landing page — document structuring for Australian GP clinics" loading="lazy" width="1440" height="900" /><span class="app-logo"><img src="photos/apps/docsert-logo.svg" alt="" loading="lazy" /></span></div>
             <i class="ph ph-arrow-up-right go" aria-hidden="true"></i>
           </a>
         </div>
@@ -793,9 +805,9 @@
         <h2 class="reveal">A foot in <em class="serif">both</em> worlds.</h2>
         <div class="stats">
           <div class="stat reveal"><div class="big">5<span class="unit">+ yrs</span></div><div class="lbl">Nursing in Australian GP clinics</div></div>
-          <div class="stat reveal" style="--d:80px"><div class="big">BIS</div><div class="lbl">Bachelor of Information Systems Management</div></div>
-          <div class="stat reveal" style="--d:160px"><div class="big">Golden Key</div><div class="lbl">International academic honour society</div></div>
-          <div class="stat reveal" style="--d:240px"><div class="big">5</div><div class="lbl">Products launched since founding in 2025</div></div>
+          <div class="stat reveal" style="--d:80ms"><div class="big">BIS</div><div class="lbl">Bachelor of Information Systems Management</div></div>
+          <div class="stat reveal" style="--d:160ms"><div class="big">Golden Key</div><div class="lbl">International academic honour society</div></div>
+          <div class="stat reveal" style="--d:240ms"><div class="big">5</div><div class="lbl">Products launched since founding in 2026</div></div>
         </div>
       </div>
     </section>
@@ -810,7 +822,7 @@
         <div class="faq-list">
           <details class="faq-item reveal" open>
             <summary><h3>Who is John Saenz?</h3><i class="ph ph-caret-down caret" aria-hidden="true"></i></summary>
-            <p class="faq-answer">John Saenz is a Registered Nurse based in Wollongong, NSW, Australia. After five years working in Australian general practice clinics — and a degree in information systems — he now helps fellow nurses thrive in the AI era: using tech, especially AI, to their advantage and optimising efficiency in the workplace. He founded ClinicIQ Solutions in 2025 to carry that work.</p>
+            <p class="faq-answer">John Saenz is a Registered Nurse based in Wollongong, NSW, Australia. After five years working in Australian general practice clinics — and a degree in information systems — he now helps fellow nurses thrive in the AI era: using tech, especially AI, to their advantage and optimising efficiency in the workplace. He founded ClinicIQ Solutions in June 2026 to carry that work.</p>
           </details>
           <details class="faq-item reveal" style="--d:60ms">
             <summary><h3>What is ClinicIQ Solutions?</h3><i class="ph ph-caret-down caret" aria-hidden="true"></i></summary>
